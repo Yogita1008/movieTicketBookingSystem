@@ -1,0 +1,82 @@
+/*
+SQLyog Community Edition- MySQL GUI v7.01 
+MySQL - 5.5.5-10.1.35-MariaDB : Database - movie
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`movie` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `movie`;
+
+/*Table structure for table `admin` */
+
+DROP TABLE IF EXISTS `admin`;
+
+CREATE TABLE `admin` (
+  `admin_name` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`admin_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `admin` */
+
+insert  into `admin`(`admin_name`,`username`,`password`) values ('admin','admin','admin');
+
+/*Table structure for table `book_tickets` */
+
+DROP TABLE IF EXISTS `book_tickets`;
+
+CREATE TABLE `book_tickets` (
+  `customer_name` varchar(20) DEFAULT NULL,
+  `movie_id` varchar(20) DEFAULT NULL,
+  `movie_name` varchar(20) DEFAULT NULL,
+  `show_time` varchar(20) DEFAULT NULL,
+  `rate` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `book_tickets` */
+
+insert  into `book_tickets`(`customer_name`,`movie_id`,`movie_name`,`show_time`,`rate`) values ('Yogita','M1','Kabir Singh','10:30 Am',350),('Prajakta','M2','Batla House','01:30 Pm',300),('yogita','M2','Batla House','01:30 Pm',300);
+
+/*Table structure for table `customer` */
+
+DROP TABLE IF EXISTS `customer`;
+
+CREATE TABLE `customer` (
+  `customer_name` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `psw` varchar(10) NOT NULL,
+  `acc_balance` int(11) NOT NULL DEFAULT '1000'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `customer` */
+
+insert  into `customer`(`customer_name`,`email`,`username`,`psw`,`acc_balance`) values ('Yogita','yogita123@gmail.com','yogita','yyy',700),('Prajakta','praju123@gmail.com','prajakta','ppp',1000),('Kajal','kajal222@gmail.com','kajal','kkk',1000),('Sayali','sayali123@gmail.com','sayali','sss',1000);
+
+/*Table structure for table `movie` */
+
+DROP TABLE IF EXISTS `movie`;
+
+CREATE TABLE `movie` (
+  `movie_id` varchar(20) NOT NULL,
+  `movie_name` varchar(20) NOT NULL,
+  `showtime` varchar(20) NOT NULL,
+  `rate` varchar(20) NOT NULL,
+  PRIMARY KEY (`movie_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `movie` */
+
+insert  into `movie`(`movie_id`,`movie_name`,`showtime`,`rate`) values ('M1','Kabir Singh','10:30 Am','350 '),('M2','Batla House','01:30 Pm','300 '),('M3','Uri','03:30 Pm','300 '),('M4','Total Dhamal','06:30 Am','200');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

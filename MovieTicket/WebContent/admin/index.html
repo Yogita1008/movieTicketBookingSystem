@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Home page</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<script type="text/javascript"> 
+function validate()
+{
+	/* var psw = document.forms["LoginForm"]["psw"];
+	var uname = document.forms["LoginForm"]["uname"];
+	
+	//var passw=  /^[A-Za-z]\w{7,14}$/;
+	    if(psw.value== ""){
+		alert(psw.value);
+		return false;
+	} 
+	
+	if (uname.value == "")                                  
+    { 
+        window.alert("Please enter username."); 
+        uname.focus(); 
+        return false; 
+    } 
+	
+	if (psw.value == "")                                  
+    { 
+        window.alert("Please enter Password."); 
+        psw.focus(); 
+        return false; 
+    }  */
+    
+    var uname = document.getElementById("uname").value;
+    var pass = document.getElementById("pass").value;
+    
+    alert(uname + pass);
+}
+
+</script>
+</head>
+<body>
+<div class="heading">
+<img src="../images/movie.jpg" alt="">
+<marquee><big><b> Welcome To BOOK MY SHOW!!</b> </big></marquee>
+</div>
+<form name="LoginForm" onsubmit="return validate()" action="" method="post">
+  <div class="heading">
+    <h2> Login Here </h2>
+  </div>
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" >
+</div>
+<div class="loginbtn heading">
+  <a href="login.html">  <button type="button">Login</button></a>
+    </div>
+     <div class="container heading">
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container, heading" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+   
+  </div>
+</form>
+<div class="footer">
+  
+  <p>On Twitter</p>
+  <p>On Facebook</p>
+  <p>On Instagram</p>
+</div>
+</body>
+</html>
